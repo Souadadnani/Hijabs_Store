@@ -1,0 +1,31 @@
+
+/* selector de tipo y de agrupaciones de tipos */
+.header, footer, input[type="submit"]{
+    display: none;
+}
+
+h1{
+    font-family: 'Times New Roman';
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15%;
+}
+
+section{
+    margin: 12% 0 0;
+}
+
+article{
+    border: none;
+}
+
+article p{
+    font-family: Arial;
+    font-size: 1.2em;
+}
+
+
+
+
+
+

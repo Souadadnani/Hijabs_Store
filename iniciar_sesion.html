@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fragments/header_style.css">
+    <link rel="stylesheet" href="css/fragments/footer_style.css">
+    <link rel="stylesheet" href="css/sesion_style.css">
+    <script defer src="js/log_in.js"></script>
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+
+    <div class="header">
+        <header>
+            <h1 class="v">V</h1>
+            <h1 id="vela">Vela</h1> 
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hijabs</a></li>
+                <li id="altaHijab" class="oculto"><a href="alta_producto.html">Añadir Hijabs</a></li>
+                <li><a href="registrar.html">Registrar</a></li>
+            </ul>
+            <div class="menu">
+                <a href="#"><img src="iconos/menu.png" alt="menu"></a>
+            </div>
+            <div class="buscar">  
+                <div id="tema"><img src="iconos/theme.png"></div>
+                <div class="oculto" class="usuario" id="sesionIniciada">
+                </div>
+                <div class="oculto" id="cerrarSesion"><img src="iconos/log_out.png" ></div>
+                <!-- <button class="oculto" id="cerrarSesion">Log Out</button> -->
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <h1>INICIAR SESIÓN</h1>
+
+        <form id="iniciar_sesion">
+            <p>¿No tienes cuenta? <a href="registrar.html">Registrate aquí</a></p>
+            
+            <input id="email" type="text" name="email" placeholder="Email"><br>
+            <span id="error_email"></span>
+            <input id="password" type="password" name="password" placeholder="Contraseña"><br>
+            <span id="error_password"></span>
+            <input id="submit" type="submit" value="INICIAR SESIÓN"><br>
+            <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+
+        </form>
+    </main>
+
+    <footer>
+     
+        <div id="icon"><img src="iconos/twitter.png" alt="x"></div> 
+        <div id="icon"><img src="iconos/instagram.png" alt="Instagram"> </div> 
+        <div><img src="iconos/facebook.png" alt="Facebook"></div> 
+
+    </footer>
+    
+</body>
+</html>

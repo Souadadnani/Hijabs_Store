@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="css/fragments/header_style.css">
+    <link rel="stylesheet" href="css/fragments/footer_style.css">
+    <link href="css/print_style.css" media="print" rel="stylesheet" />
+    <script defer src="js/articulos.js"></script>
+    <title>Hijabs</title>
+</head>
+<body>
+    <div class="header">
+        <header>
+            <h1 class="v">V</h1>
+            <h1 id="vela">Vela</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hijabs</a></li>
+                <li id="altaHijab" class="oculto"><a href="alta_producto.html">Añadir Hijabs</a></li>
+                <li><a href="iniciar_sesion.html">Iniciar Sesión</a></li>
+                <li><a href="registrar.html">Registrar</a></li>
+            </ul>
+            <div class="menu">
+                <a href="#"><img src="iconos/menu.png" alt="menu"></a>
+            </div>
+            <div class="buscar">
+                <div id="tema"><img src="iconos/theme.png"></div>
+                <input id="buscar" type="text" placeholder="Buscar">   
+                <div class="oculto" class="usuario" id="sesionIniciada">
+                </div>
+                <div class="oculto" id="cerrarSesion"><img src="iconos/log_out.png" ></div>
+            </div>
+        </nav>
+    </div>
+ 
+    <main>
+        <h1>Hijabs</h1>
+        <div id="ordenar">
+            <label for="ordenar">Ordenar</label> 
+            <select name="ordenar" id="select_ordenar">
+                <option>Más recientes</option>
+                <option>Más antiguos</option>
+            </select>
+        </div>
+        <section id="articulos">
+           
+        </section>
+    </main>
+
+    <footer>
+     
+        <div id="icon"><img src="iconos/twitter.png" alt="x"></div> 
+        <div id="icon"><img src="iconos/instagram.png" alt="Instagram"> </div> 
+        <div><img src="iconos/facebook.png" alt="Facebook"></div> 
+
+    </footer>
+</body>
+</html>

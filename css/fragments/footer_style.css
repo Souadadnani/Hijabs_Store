@@ -1,0 +1,26 @@
+img{
+    object-fit: cover;
+}
+
+footer{
+    background-image: url(../../imagenes/footer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative; 
+    z-index: -1;
+}
+
+#icon{
+    object-fit: cover;
+    padding: 125px 0 109px 0;;
+
+}
+
+footer div:last-child{
+    padding-right: 35px;
+} 

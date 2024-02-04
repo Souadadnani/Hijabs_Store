@@ -1,0 +1,105 @@
+body{
+    height: 100vh;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    gap: 45px;
+    margin: 0px 45px 75px;
+    
+}
+
+article {
+    border: 3px solid var(--footer, rgba(13, 2, 16, 0.94));
+    background: var(--violeta-claro, #FFFBFF); 
+    display: grid;
+    grid-template-areas: 
+        "imagen"
+        "parrafo"
+        "boton";
+    justify-content: center;
+    align-content: space-evenly;
+    justify-items: center;
+    grid-template-columns: 1fr;
+}
+
+article div{
+    grid-area: imagen;
+    justify-self: center;
+    width: 100%;
+}
+
+/* selector descendiente */
+article p{
+    grid-area: parrafo;
+    justify-self: center;
+    color: var(--texto, #0D0210);
+    font-family: Rokkitt;
+    font-size: 27px;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+input[type="submit"]{
+    grid-area: boton;
+    border: 1px solid var(--footer, rgba(13, 2, 16, 0.94));
+    background: var(--botones, linear-gradient(180deg, rgba(77, 49, 71, 0.12) 0%, rgba(77, 49, 71, 0.86) 35.94%, rgba(77, 49, 71, 0.94) 51.04%, rgba(77, 49, 71, 0.47) 83.33%, rgba(77, 49, 71, 0.00) 100%));
+    padding: 3%;
+    justify-self: center;
+    color: var(--violeta-claro, #FFFBFF);
+    text-align: center;
+    font-family: Rokkitt;
+    font-size: 100%;
+    font-weight: 400;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+img {
+   object-fit: cover;
+   width: 100%;
+}
+label{
+    color: var(--small-text, #583360);
+    font-family: Rokkitt;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding-top: 20px;
+}
+select[name="ordenar"]{
+    background: #FFFBFF;
+    width: 17%;
+    height: 35px;
+    color: #0D0210;
+    font-family: Rokkitt;
+    font-size: 108%;
+    font-weight: 200;
+    text-align: center;
+    text-transform: capitalize;
+    border: 2px solid #0D0210;
+    outline-color: #583360;
+}
+#ordenar{
+    margin: 4%;
+    width: 50%;
+}
+
+@media only screen and (max-width: 650px) {
+
+    section{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        row-gap: 20px;
+    }
+    select[name="ordenar"]{
+        width: 54%;
+    }
+}
+
+
+
