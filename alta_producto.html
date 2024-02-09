@@ -26,10 +26,10 @@
                 <a href="#"><img src="iconos/menu.png" alt="menu"></a>
             </div>
             <div class="buscar">  
-                <div id="tema"><img src="iconos/theme.png"></div>
-                <div class="oculto" class="usuario" id="sesionIniciada">
+                <div tabindex="0" id="tema"><img src="iconos/theme.png"></div>
+                <div tabindex="0" class="oculto" class="usuario" id="sesionIniciada">
                 </div>
-                <div class="oculto" id="cerrarSesion"><img src="iconos/log_out.png" ></div>
+                <div tabindex="0" class="oculto" id="cerrarSesion"><img src="iconos/log_out.png" ></div>
                 <!-- <button class="oculto" id="cerrarSesion">Log Out</button> -->
             </div>
         </nav>
@@ -52,29 +52,17 @@
                     <option>Rectangular 72´´ x 72´´</option>
                     <option>Cuadrado 40´´ x 40´´</option>
                 </select>
-               <!--  <input id="rectangular" type="button" name="tamanyo" value="Rectangular 72´´ x 72´´">
-                <input id="cuadrado" type="button" name="tamanyo" value="Cuadrado 40´´ x 40´´"> -->
 
                 <label id="labelColor" for="color">Color</label>
                 <input id="color" type="text" name="color">               
-                <!--  <div class="colores">
-                    <input id="color1" type="button" name="color">
-                    <input id="color2" type="button" name="color">
-                    <input id="color3" type="button" name="color">
-                    <input id="color4" type="button" name="color">
-                    <input id="color5" type="button" name="color">
-                    <input id="color6" type="button" name="color">
-                    <input id="color7" type="button" name="color">
-                </div> -->               
+                       
                 <label id="labelMaterial" for="material">Material</label>
                 <select id="material" name="material">
                     <option>Satén</option>
                     <option>Jersey</option>
                     <option>Chiffon</option>
                 </select>
-             <!--    <select name="cantidad">
-                    <option selected>- Cantidad +</option> 
-                </select><br> -->
+             
                 <label id="labelCantidad" for="cantidad">Cantidad</label>
                 <input id="cantidad" type="numbre" name="cantidad">
                 

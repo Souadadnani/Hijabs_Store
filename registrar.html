@@ -19,18 +19,16 @@
         <nav>
             <ul>
                 <li><a href="index.html">Hijabs</a></li>
-                <!-- <li><a href="alta_producto.html">Añadir Hijabs</a></li> -->
                 <li><a href="iniciar_sesion.html">Iniciar Sesión</a></li>
             </ul>
             <div class="menu">
                 <a href="#"><img src="iconos/menu.png" alt="menu"></a>
             </div>
             <div class="buscar">  
-                <div id="tema"><img src="iconos/theme.png"></div> 
-                <div class="oculto" class="usuario" id="sesionIniciada">
+                <div tabindex="0" id="tema"><img src="iconos/theme.png" alt="cambiar tema"></div> 
+                <div tabindex="0" aria-label="Sesión iniciada" class="oculto" class="usuario" id="sesionIniciada">
                 </div>
-                <div class="oculto" id="cerrarSesion"><img src="iconos/log_out.png" ></div>
-               <!--  <button class="oculto" id="cerrarSesion">Log Out</button> -->
+                <div tabindex="0" class="oculto" id="cerrarSesion"><img src="iconos/log_out.png" alt="Cerrar sesión"></div>
             </div>
         </nav>
     </div>
@@ -39,37 +37,37 @@
 
         <h1>Crear cuenta</h1>
 
-        <form id="registrar">
+        <form id="registrar" aria-label="registrar nuevo usuario" name="registrar">
 
             <input id="nombre" type="text" name="nombre" placeholder="Nombre">
-            <span id="error_nombre"></span>
+            <span tabindex="-1" id="error_nombre"></span>
 
             <input id="apellidos" type="text" name="apellidos" placeholder="Apellidos">
-            <span id="error_apellidos"></span>
+            <span tabindex="-1" id="error_apellidos"></span>
 
             <input id="dni" type="text" name="dni" placeholder="DNI">
-            <span id="error_dni"></span>
+            <span tabindex="-1" id="error_dni"></span>
 
             <input id="email" type="text" name="email" placeholder="Email">
-            <span id="error_email"></span>
+            <span tabindex="-1" id="error_email"></span>
 
             <input type="number" name="telefono" id="telefono" placeholder="Telefono">
-            <span id="error_telefono"></span>
+            <span tabindex="-1" id="error_telefono"></span>
 
             <input id="password" type="password" name="password" placeholder="Contraseña">
-            <span id="error_password"></span>
+            <span tabindex="-1" id="error_password"></span>
             
             <input id="submit" type="submit" value="crear">
         </form>
-        <p>¿Ya tienes una cuenta? <a href="iniciar_sesion.html">Inicia sesión</a></p>
+        <p><a href="iniciar_sesion.html">¿Ya tienes una cuenta? Inicia sesión</a></p>
     
     </main>
 
     <footer>
      
-        <div id="icon"><img src="iconos/twitter.png" alt="x"></div> 
-        <div id="icon"><img src="iconos/instagram.png" alt="Instagram"> </div> 
-        <div><img src="iconos/facebook.png" alt="Facebook"></div> 
+        <div tabindex="0" id="icon"><img src="iconos/twitter.png" alt="twitter"></div> 
+        <div tabindex="0" id="icon"><img src="iconos/instagram.png" alt="Instagram"></div> 
+        <div tabindex="0"><img src="iconos/facebook.png" alt="Facebook"></div> 
 
     </footer>
 

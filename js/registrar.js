@@ -18,12 +18,9 @@ function validarNombre(){
     const errorNombre = document.getElementById("error_nombre");
     nombre.required = true;
     if(nombre.value.length <= 3){
-        /* let inputNombre = document.querySelector('input=[name="nombre]');  
-        let span = document.createElement('span');
-        inputNombre.after(span);
-        span.id = "error_nombre"; */
         nombre.classList.add("invalid");
         errorNombre.innerText = "El nombre debe tener más de 3 caracteres"
+        errorNombre.focus();
         return false;
     }
     let nombreTransformado = nombre.value.charAt(0).toUpperCase() + nombre.value.substring(1, nombre.value.length).toLowerCase();
@@ -40,6 +37,7 @@ function validarApellidos(){
     if(apellidos.value.length <= 3){
         apellidos.classList.add("invalid");
         errorApellidos.innerText = "Los apellidos debe tener mas de 3 caracteres";
+        errorApellidos.focus();
         return false;
     }
 
@@ -66,6 +64,7 @@ function validarDNI(){
         if(letrasDNI[indexLetra] !== dni.value[8]){
             dni.classList.add("invalid");
             errorDNI.innerText = "La letra del DNI no es valida";
+            errorDNI.focus();
             return false;
         }else{
             dni.classList.remove("invalid");
@@ -75,6 +74,7 @@ function validarDNI(){
     }else{
         dni.classList.add("invalid");
         errorDNI.innerText = "El formato del DNI es invalida";
+        errorDNI.focus();
         return false;
     }
 }
@@ -87,16 +87,22 @@ function validarPassword(){
     if(!patron.test(password.value)){
         if(password.value.length < 8){
             errorPassword.innerText = "La contraseña debe tener al menos 8 caracteres";
+            errorPassword.focus();
         }else if(!/\d/.test(password.value)){
             errorPassword.innerText = "La contraseña tiene que tener al menos un numero";
+            errorPassword.focus();
         }else if(!/[a-z]/.test(password.value)){
             errorPassword.innerText = "la contraseña debe tener al menos una letra minuscula";
+            errorPassword.focus();
         }else if(!/[A-Z]/.test(password.value)){
             errorPassword.innerText = "la contraseña debe tener al menos una letra mayuscula";
+            errorPassword.focus();
         }else{
             errorPassword.innerText = "El formato de la contraseña no es valido";
+            errorPassword.focus();
         }
         password.classList.add("invalid");
+        errorPassword.focus();
         return false;
     }else{
         password.classList.remove("invalid");
@@ -113,6 +119,7 @@ function validarEmail(){
     if(!patron.test(email.value)){
         errorEmail.innerText = "El formato del email es invalido";
         email.classList.add('invalid');
+        email.focus();
         return false;
     }else{
         email.classList.remove('invalid');
@@ -128,6 +135,7 @@ function validarTelefono(){
     if(!patron.test(telefono.value)){
         errorTelefono.innerText = "El formato del telefono es incorrecto";
         telefono.classList.add('invalid');
+        errorTelefono.focus();
         return false;
     }else{
         errorTelefono.innerText = "";
