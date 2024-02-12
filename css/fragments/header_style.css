@@ -42,7 +42,7 @@ body{
     border-radius: 30%;
 }
 
-.buscar{
+.elementos{
     display: flex;
     flex-direction: row;
     align-items: center;

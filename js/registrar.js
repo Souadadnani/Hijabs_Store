@@ -84,24 +84,21 @@ function validarPassword(){
     let errorPassword = document.getElementById("error_password"); 
     password.required = true;
     const patron = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm;
-    if(!patron.test(password.value)){
+    if(!patron.test(password.value) && password.value.trim("")){
         if(password.value.length < 8){
             errorPassword.innerText = "La contraseña debe tener al menos 8 caracteres";
-            errorPassword.focus();
         }else if(!/\d/.test(password.value)){
             errorPassword.innerText = "La contraseña tiene que tener al menos un numero";
-            errorPassword.focus();
         }else if(!/[a-z]/.test(password.value)){
             errorPassword.innerText = "la contraseña debe tener al menos una letra minuscula";
-            errorPassword.focus();
         }else if(!/[A-Z]/.test(password.value)){
             errorPassword.innerText = "la contraseña debe tener al menos una letra mayuscula";
-            errorPassword.focus();
         }else{
             errorPassword.innerText = "El formato de la contraseña no es valido";
             errorPassword.focus();
         }
         password.classList.add("invalid");
+        errorPassword.innerText = "El formato de la contraseña no es valido";
         errorPassword.focus();
         return false;
     }else{
@@ -119,7 +116,7 @@ function validarEmail(){
     if(!patron.test(email.value)){
         errorEmail.innerText = "El formato del email es invalido";
         email.classList.add('invalid');
-        email.focus();
+        errorEmail.focus();
         return false;
     }else{
         email.classList.remove('invalid');
@@ -169,6 +166,7 @@ function validarFormulario(e){
     else if(!validarPassword()){
         document.getElementById('error_password').innerText = "No se ha podido completar el registro, revisa el campo de contraseña";
         document.getElementById('password').focus();
+        document.getElementById("error_password").focus();
     }
     else{
         console.log("hola usuario");
