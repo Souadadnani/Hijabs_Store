@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById("dni").addEventListener("blur", validarDNI);
     document.getElementById("email").addEventListener("blur", validarEmail);
     document.getElementById("telefono").addEventListener("blur", validarTelefono);
-    document.getElementById("password").addEventListener("input", validarPassword);
+    document.getElementById("password").addEventListener("blur", validarPassword);
     document.getElementById("submit").addEventListener("click", validarFormulario);
     document.getElementById('cerrarSesion').addEventListener("click", cerrarSesion);
     document.getElementById('tema').addEventListener('click', cambiarTema);
@@ -36,7 +36,7 @@ function validarApellidos(){
     apellidos.required = true;
     if(apellidos.value.length <= 3){
         apellidos.classList.add("invalid");
-        errorApellidos.innerText = "Los apellidos debe tener mas de 3 caracteres";
+        errorApellidos.innerText = "Los apellidos debe tener más de 3 caracteres";
         errorApellidos.focus();
         return false;
     }
@@ -84,8 +84,8 @@ function validarPassword(){
     let errorPassword = document.getElementById("error_password"); 
     password.required = true;
     const patron = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm;
-    if(!patron.test(password.value) && password.value.trim("")){
-        if(password.value.length < 8){
+    if(!patron.test(password.value)){
+        /* if(password.value.length < 8){
             errorPassword.innerText = "La contraseña debe tener al menos 8 caracteres";
         }else if(!/\d/.test(password.value)){
             errorPassword.innerText = "La contraseña tiene que tener al menos un numero";
@@ -96,9 +96,9 @@ function validarPassword(){
         }else{
             errorPassword.innerText = "El formato de la contraseña no es valido";
             errorPassword.focus();
-        }
-        password.classList.add("invalid");
+        } */
         errorPassword.innerText = "El formato de la contraseña no es valido";
+        password.classList.add("invalid");
         errorPassword.focus();
         return false;
     }else{
@@ -130,7 +130,7 @@ function validarTelefono(){
     let errorTelefono = document.getElementById('error_telefono');
     const patron = /^((6|7)[0-9]{8})$/gi;
     if(!patron.test(telefono.value)){
-        errorTelefono.innerText = "El formato del telefono es incorrecto";
+        errorTelefono.innerText = "El formato del teléfono es incorrecto";
         telefono.classList.add('invalid');
         errorTelefono.focus();
         return false;
@@ -165,11 +165,9 @@ function validarFormulario(e){
     }
     else if(!validarPassword()){
         document.getElementById('error_password').innerText = "No se ha podido completar el registro, revisa el campo de contraseña";
-        document.getElementById('password').focus();
         document.getElementById("error_password").focus();
     }
     else{
-        console.log("hola usuario");
         newAccount(e);
     }
 }
@@ -177,6 +175,7 @@ function validarFormulario(e){
 function newAccount(e){
     e.preventDefault();
     const formulario = document.getElementById("registrar");
+    const p = document.createElement('p');
     if(formulario){
         const user = {
             "nombre": formulario.nombre.value,
@@ -205,9 +204,19 @@ function newAccount(e){
                 localStorage.setItem("idUsuario", JSON.stringify(user.id));
                 sesionIniciada();
                 limpiarCampos();
+                p.innerText = `Usuario registrado con exito`;
+                p.setAttribute('tabindex', '0');
+                p.classList.toggle('correcto');
+                document.getElementById('registrar').before(p);
+                p.focus();
             })
             .catch(error=> {
-                document.querySelector('form').innerHTML = (`<p>Error ${error.message}</p>`);
+                p.innerText = `No se ha podido completar el registro, intenta de nuevo`;
+                p.setAttribute('tabindex', '0');
+                p.classList.toggle('error');
+                console.log(error.message);
+                document.getElementById('registrar').before(p);
+                p.focus();
             })
     }else{
         console.log("no se puede registrar");

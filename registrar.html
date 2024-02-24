@@ -38,28 +38,33 @@
         <h1>Crear cuenta</h1>
 
         <form id="registrar" name="registrar">
-        
-            <input aria-label="name" id="nombre" type="text" name="nombre" placeholder="Nombre">
+            <label for="nombre">Nombre
+            <input id="nombre" type="text" name="nombre" placeholder="Nombre"></label>
             <span tabindex="-1" id="error_nombre"></span>
-
-            <input aria-label="apellidos" id="apellidos" type="text" name="apellidos" placeholder="Apellidos">
+            
+            <label for="apellidos">Apellidos
+            <input aria-label="apellidos" id="apellidos" type="text" name="apellidos" placeholder="Apellidos"></label>
             <span tabindex="-1" id="error_apellidos"></span>
 
-            <input aria-label="dni" id="dni" type="text" name="dni" placeholder="DNI">
+            <label for="dni">DNI
+            <input aria-label="dni" id="dni" type="text" name="dni" placeholder="DNI"></label>
             <span tabindex="-1" id="error_dni"></span>
 
-            <input aria-label="email" id="email" type="text" name="email" placeholder="Email">
+            <label for="email">Correo electrónico
+            <input aria-label="email" id="email" type="text" name="email" placeholder="Email"></label>
             <span tabindex="-1" id="error_email"></span>
 
-            <input aria-label="tel" type="number" name="telefono" id="telefono" placeholder="Telefono">
+            <label for="tel">Teléfono
+            <input aria-label="tel" type="number" name="telefono" id="telefono" placeholder="Teléfono"></label>
             <span tabindex="-1" id="error_telefono"></span>
 
-            <input aria-label="password" id="password" type="password" name="password" placeholder="Contraseña">
+            <label for="password">Contraseña
+            <input aria-label="password" id="password" type="password" name="password" placeholder="123Ejemplo%$"></label>
             <span tabindex="-1" id="error_password"></span>
             
-            <input id="submit" type="submit" value="crear">
+            <input id="submit" type="submit" value="Registrar">
         </form>
-        <p>¿Ya tienes una cuenta?<a href="iniciar_sesion.html"> Inicia sesión</a></p>
+        <p aria-labelledby="cuenta">¿Ya tienes una cuenta?<a href="iniciar_sesion.html"> Inicia sesión</a></p>
     
     </main>
 

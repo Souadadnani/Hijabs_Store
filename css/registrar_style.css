@@ -6,7 +6,7 @@ img{
 form{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(7, 40px);
+    grid-template-rows: repeat(7, 50px);
     width: 50%;
     margin: 0 25%;
     gap: 24px;
@@ -14,23 +14,32 @@ form{
     justify-items: start;
     align-content: center;
 }
+label{
+    color: var(--texto, #0D0210);
+    font-size: 20px;
+    font-family: Rokkitt;
+    font-weight: 400; 
+    width: 90%;  
+}
 
 input{
     border: 1px solid var(--texto, #0D0210);
     background: var(--violeta-claro, #FFFBFF);
     width: 90%;
-    height: 55px;
+    height: 48px;
     padding-left: 15px;
     font-size: 20px;
     font-weight: 400;
     justify-self: center;
     outline-color: #6B2E69;
     color: #0D0210;
+    margin-top: 10px;
 }
 
 input[type="submit"]{
     background: #6B2E69;
     width: 50%;
+    height: 52px;
     text-transform: uppercase;
     cursor: pointer;
     color: var(--violeta-claro, #FFFBFF);
@@ -44,8 +53,8 @@ input[type="submit"]{
 input::placeholder{
     color: var(--texto-inputs, rgba(112, 100, 115, 0.80));
     font-family: Rokkitt;
-    font-size: 20px;
-    font-weight: 400; 
+    font-size: 17px;
+    font-weight: 200; 
 }
 
 #nombre{
@@ -109,19 +118,26 @@ input::placeholder{
 span{
     font-size: 20px;
     font-family: Rokkitt;
-    color: #991194;
-    margin: 8px 0 0 5px;
+    color: rgb(209, 55, 55);;
+    margin: 28px 0 0;
 }
-
+.error{
+    color: rgb(209, 55, 55);;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+.correcto{
+    color: #6B2E69;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 10px 0;
+}
 .invalid{
-    /* animation: slideLeft 2s linear infinite; */
     border: 2px solid rgb(209, 55, 55);
     outline-color: rgb(209, 55, 55);
 }
 
-@keyframes slideLeft {
-    from{transform: rotate(-2deg)}
-}
 /* selectores combinados*/
 p, a{
     color: var(--texto, #0D0210);
